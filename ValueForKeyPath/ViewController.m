@@ -6,6 +6,13 @@
 //  Copyright © 2018年 xiaofei. All rights reserved.
 //  ValueForKeyPath 用法
 
+/**
+ @distinctUnionOfObjects  // 去重后所得的数组
+ @avg, @sum, @max, @min   // 对数组中数字进行做相应的计算  NSNumber类型
+ uppercaseString          // 数组中所有字母大写后所得的数组
+ length                   // 数组中每个元素的字符个数组成的数组
+ */
+
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -21,6 +28,7 @@
     [self uppercaseAllCom];
     [self lengthPerCom];
     [self getTargetValue];
+    [self answerForArr];
 }
 
 // 去除数组中重复的对象
@@ -65,6 +73,19 @@
      [@"cookeee", @"jim", @"jim", @"jbos"]
      [@2, @1]
      */
+}
+
+/**
+ * @sum.self / @sum.floatValue  求和
+ * @avg.self / @avg.floatValue  求平均
+ * @max.self / @max.floatValue  求最大
+ * @min.self / @min.floatValue  求最小
+ */
+
+- (void)answerForArr {
+    NSArray *arr = @[@1, @5, @47, @7];
+    NSNumber *avg = [arr valueForKeyPath:@"@avg.self"];
+    NSLog(@"%.2f", [avg floatValue]);
 }
 
 
